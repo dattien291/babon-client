@@ -1,0 +1,170 @@
+.ks-product-card {
+  background: #f6f6f6;
+  max-width: 100%;
+  margin: auto;
+  bottom: 50%;
+
+  &:hover > .content > .buy > .button {
+    background-color: $color-primary;
+  }
+  &:hover > .content > .buy > .button > .icon {
+    color: white;
+  }
+
+  > .thumbnail {
+    position: relative;
+    aspect-ratio: 1;
+    overflow: hidden;
+    height: auto;
+
+    > .image {
+      @include square(100%);
+      display: block;
+    }
+  }
+
+  > .thumbnail > .image > .img {
+    transition: 0.3s linear;
+  }
+
+  > .thumbnail > .image > .img.-secondary {
+    @include hidden;
+    @include position(absolute, 0, 0, 0, 0);
+    transition: all 0.5s ease;
+  }
+
+  &:hover > .thumbnail > .image > .img.-secondary {
+    transform: scale(1.1);
+  }
+
+  > .thumbnail > .onsale {
+    @include position(absolute, 10px, 10px, null, null);
+    left: 10px;
+    color: #e6e6e6;
+    z-index: 3;
+    top: 10px;
+    transition: all 0.35s ease-in-out;
+  }
+  > .thumbnail > .onsale > .badge {
+    padding: 3px 8px;
+    display: inline-block;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    border-radius: 3px;
+    text-align: center;
+    text-transform: uppercase;
+    background: #e38b8b;
+    color: #fff;
+  }
+  > .thumbnail > .actions {
+    @include position(absolute, null, 15px, 45px, null);
+    transition: 0.3s;
+    flex-direction: column;
+    display: flex;
+    gap: 6px;
+    bottom: 40%;
+  }
+
+  > .thumbnail > .actions > .button {
+    @include hidden;
+    background: $white;
+    @include flex-center;
+    @include circle(44px);
+
+    &:hover {
+      background-color: $color-success;
+    }
+    &:hover > .icon {
+      color: white;
+    }
+  }
+
+  > .thumbnail > .actions > .button > .icon {
+    @include square(25px);
+    @include flex-center;
+    color: rgb(8, 8, 10);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+  }
+
+  &:hover > .thumbnail > .actions > .button {
+    @include visible;
+  }
+
+  &:hover > .thumbnail > .image > .img {
+    &.-main {
+      @include hidden;
+    }
+    &.-secondary {
+      @include visible;
+    }
+  }
+
+  > .content > .rating {
+    gap: 4px;
+    font-size: 12px;
+    color: $color-text;
+    margin-bottom: 4px;
+  }
+  > .content > .rating > .MuiRating-root {
+    font-size: 20px;
+    color: $color-primary;
+  }
+
+  > .content {
+    font-size: 16px;
+    font-weight: $fw-semibold;
+    line-height: 1.25;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 17px 30px 25px;
+  }
+  > .content > .link {
+    color: $color-success;
+    padding-right: 40px;
+    max-height: 40px;
+    overflow: hidden;
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  > .content > .buy {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+  }
+  > .content > .buy > .button {
+    @include flex-center;
+    @include circle(44px);
+  }
+  > .content > .buy > .button > .icon {
+    @include flex-center;
+    color: $black;
+    @include square(18px);
+  }
+
+  > .content .price {
+    font-family: $font-family;
+    font-size: 16px;
+    line-height: 1.5;
+    color: $color-success;
+    font-weight: $fw-normal;
+  }
+  > .content > .price > .normal {
+  }
+  > .content > .price > .optionPrice {
+    // &::before{
+    //   content: "-";
+    // }
+  }
+  > .content > .price > .new {
+  }
+  > .content > .price > .old {
+    text-decoration-line: line-through;
+  }
+}

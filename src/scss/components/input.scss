@@ -1,0 +1,90 @@
+.ks-input {
+  width: 100%;
+
+  > .field > .input {
+    width: 100%;
+    color: $color-gray-500;
+    border: none;
+  }
+
+  &.-disabled > .field {
+    padding: 0;
+  }
+
+  &.-disabled > .field > .input {
+    height: 100%;
+  }
+
+  &.-has-icon > .field > .input {
+    @include breakpoint-down(phone) {
+      width: 270px;
+    }
+  }
+
+  &.-has-icon > .field > .search-icon {
+    @include position(absolute, 50%, 0, null, null);
+    transform: translateY(-50%);
+    margin-right: 10px;
+    flex-shrink: 1;
+    @include breakpoint-down(phone) {
+      @include position(absolute, 50%, 0, null, null);
+    }
+  }
+
+  &.-invalid > .field {
+    border: 1px solid red;
+  }
+  &.-invalid > .invalid {
+    @include position(absolute, null, null, 0, 1%);
+    transform: translateY(100%);
+    color: red;
+    @include breakpoint-down(phone) {
+      @include position(absolute, null, null, 0, 7%);
+    }
+  }
+
+  > .field > .adornment {
+    display: inline-block;
+    @include size(50px, 100%);
+    @include flex-center;
+  }
+  &.-has-adornment > .field {
+    @include flex-center;
+    width: 100%;
+    padding-inline: 20px;
+    border-radius: 0;
+    padding-block: 0;
+  }
+  &.-has-adornment > .field > .adornment {
+    @include flex-center;
+    flex-shrink: 0;
+    height: 100%;
+  }
+
+  > .field > .adornment {
+    background-color: $color-primary;
+    color: white;
+    height: 100%;
+  }
+
+  > .field > .adornment.-end {
+    margin-right: -70px;
+    margin-left: 6px;
+  }
+  &.-divider > .field {
+    @include flex-center-ver;
+    padding-right: 20px;
+  }
+  &.-divider > .field > .btn-group {
+    height: 100%;
+    display: flex;
+  }
+  &.-divider > .field > .btn-group > .divider {
+    border-left: 1px solid $border-color;
+    display: block;
+    @include size(10px, 100%);
+  }
+  &.-divider > .field > .btn-group > .btn-find {
+    text-align: center;
+  }
+}

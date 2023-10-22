@@ -1,0 +1,97 @@
+$button-variants: (
+  primary: $color-primary,
+  secondary: $color-secondary,
+  success: $color-success,
+  light: $white,
+  dark: $black,
+);
+
+.ks-button {
+  @include flex-center;
+  font-size: $fs-lg;
+  font-weight: $fw-bold;
+  border-radius: 10px;
+  height: 44px;
+  transition: all 0.3s ease;
+
+  //variant
+  @each $variant, $color in $button-variants {
+    &.-contained-#{$variant} {
+      background-color: $color;
+      color: $white;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    &.-outlined-#{$variant} {
+      background-color: transparent;
+      color: $white;
+      border: 1px solid $color;
+
+      &:hover {
+        color: black;
+        background-color: $color;
+      }
+    }
+  }
+
+  &.-contained-light {
+    color: $black;
+
+    &:hover {
+      background-color: $color-success;
+      color: $white;
+    }
+  }
+
+  &:hover {
+    background: $color-primary;
+    color: $white;
+  }
+  //size
+  &.-full-width {
+    @include flex-center;
+    width: 100%;
+  }
+
+  &.-md {
+    height: 44px;
+  }
+
+  &.-lg {
+    height: 60px;
+  }
+
+  &.-adornment {
+    @include flex-center-ver;
+    gap: 6px;
+  }
+
+  // shape
+  &.-circle {
+    padding: 0px;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+  }
+
+  &.-square {
+    padding: 0;
+    aspect-ratio: 1/1;
+  }
+
+  &.-icon-only {
+    padding: 0;
+    @include circle(44px);
+    color: $black;
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  &.-no-border {
+    border: transparent;
+  }
+}

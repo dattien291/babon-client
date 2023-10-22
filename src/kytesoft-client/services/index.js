@@ -1,0 +1,16 @@
+export { default as addressServices } from './addressServices';
+export { default as appServices } from './appServices';
+export { default as authServices } from './authServices';
+export { default as blogCategoryServices } from './blogCategoryServices';
+export { default as blogCommentServices } from './blogCommentServices';
+export { default as blogServices } from './blogServices';
+export { default as cartServices } from './cartServices';
+export { default as contactServices } from './contactServices';
+export { default as faqServices } from './faqServices';
+export { default as orderServices } from './orderServices';
+export { default as productCategoryServices } from './productCategoryServices';
+export { default as productCommentServices } from './productCommentServices';
+export { default as productServices } from './productServices';
+export { default as quoteServices } from './quoteServices';
+export { default as sliderServices } from './sliderServices';
+export { default as userServices } from './userServices';

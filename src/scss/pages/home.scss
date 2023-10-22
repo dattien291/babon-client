@@ -1,0 +1,34 @@
+.ks-home {
+  display: flex;
+  gap: 10px;
+
+  &-sidebar {
+    @include size(250px, 100vh);
+    padding: 20px 15px;
+
+    > .logo {
+      width: 150px;
+    }
+  }
+
+  &-content {
+    @include flex-column;
+    flex: 1;
+
+    > .dashboard {
+      display: flex;
+    }
+
+    > .dashboard > .posts {
+      width: 70%;
+    }
+
+    > .dashboard > .trending {
+      width: 30%;
+    }
+  }
+
+  .account-control {
+    margin: 16px 0;
+  }
+}
